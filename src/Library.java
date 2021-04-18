@@ -6,8 +6,19 @@ public class Library {
 
     public Library(Book[] books) {
         this.books = books;
-
     }
+
+    public Library (Client[] clients) {
+        this.clients = clients;
+    }
+
+
+    public Library(Book[] books, Client[] clients) {
+        this.books = books;
+        this.clients = clients;
+    }
+
+
 
     public Book[] searchBooksByName(String bookName) {
         int counter = 0;

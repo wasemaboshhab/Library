@@ -1,4 +1,4 @@
-public class Book {
+public class   Book {
 
     public String name;
     private  Author author;
@@ -7,9 +7,9 @@ public class Book {
     private int copies;
 
 
-    Book (){}
+    public Book (){}
 
-    Book(String name, int yearOfPublication, boolean bestseller, int copies, Author author) {
+    public Book(String name, int yearOfPublication, boolean bestseller, int copies, Author author) {
         this.name = name;
         this.yearOfPublication = yearOfPublication;
         this.bestseller = bestseller;

@@ -55,8 +55,8 @@ public class Client {
 
 
 
-    Client () {}
-    Client (String name , String lastName , int maxBooksLend ,boolean validSubscription , Book[] booksBorrowed) {
+    public Client () {}
+    public Client (String name , String lastName , int maxBooksLend ,boolean validSubscription , Book[] booksBorrowed) {
         this.name = name;
         this.lastName = lastName;
         this.maxBooksLend = maxBooksLend;

@@ -42,9 +42,9 @@ public class Main {
         Book[] booksInTheLibrary = {book1, book2, book3};
         Library library = new Library(booksInTheLibrary);
 
-//        System.out.println(Arrays.toString(library.searchBooksByName("The secret")));  //done
-//        System.out.println(Arrays.toString(library.searchBooksByMinimumYearOfPublication(2000))); // done
-//        System.out.println(Arrays.toString(library.searchBooksByAuthorName("Wasim Shhab"))); // done
+        System.out.println(Arrays.toString(library.searchBooksByName("The secret")));  //done
+        System.out.println(Arrays.toString(library.searchBooksByMinimumYearOfPublication(2000))); // done
+        System.out.println(Arrays.toString(library.searchBooksByAuthorName("Wasim Shhab"))); // done
 
 
 

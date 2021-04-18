@@ -5,8 +5,8 @@ public class Author {
     private  String language;
     private  String writingGenre;
 
-    Author() {}
-    Author(String firstName ,String lastName ,String language , String writingGenre) {
+    public Author() {}
+    public Author(String firstName ,String lastName ,String language , String writingGenre) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.language = language;
