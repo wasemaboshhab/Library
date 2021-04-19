@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class Client {
 
@@ -7,7 +7,7 @@ public class Client {
     private Book[] booksBorrowed;
     private  int maxBooksLend;
     private boolean validSubscription;
- // should change the boolean to true
+
 
     public boolean borrowingBook(Book book) {
         if (!this.validSubscription) {
@@ -106,21 +106,40 @@ public class Client {
     }
 
 
-//    public static void printArray(Book [] booksBorrowed ) {
-//
-//        for (int i = 0; i < booksBorrowed.length; i++) {
-//            System.out.println(booksBorrowed[i]+", ");
-//        }
-//    }
+//    private String name;
+//    private String lastName;
+//    private Book[] booksBorrowed;
+//    private  int maxBooksLend;
+//    private boolean validSubscription;
 
-    @Override
-    public String toString() {
-        return "Client : {" +
-                "name :" + name + '\'' +
-                ", lastName :" + lastName + '\'' +
-                ", max Books Lend :" + maxBooksLend +
-                ", valid Subscription :" + validSubscription +
-                "\n, Books Borrowed : \n " + Arrays.toString(booksBorrowed) + "\n";
+    public void print() {
+
+        System.out.println("First Name :" + this.name +
+                ",Last Name :" + this.lastName +
+                ",allow to lend" + this.maxBooksLend + " books" +
+                "," + ((this.validSubscription) ? "" : "didn't") +
+                " have a valid Subscript");
+        System.out.println();
+        System.out.println("Loaned books:");
+        for (int i = 0; i <this.booksBorrowed.length ; i++) {
+            Book currentBook = this.booksBorrowed[i];
+            if (currentBook != null) {
+                currentBook.print();
+                System.out.println("------------");
+                System.out.println("------------");
+            }
+            else
+                System.out.println("he have no books"); break;
+        }
+
+
+
+
+
+
     }
+
+
+
 }
 

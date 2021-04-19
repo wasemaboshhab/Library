@@ -39,14 +39,14 @@ public class Author {
         this.writingGenre = writingGenre;
     }
 
-    public  String toString () {
-
-        return "[First Name :" + firstName + " Last Name : " + lastName + " language : " + language + " writing Genre : " + writingGenre + "]";
-
-
-
-
+    public void print() {
+        System.out.println("[Author] :\n" +
+                "First Name :" + this.firstName +
+                ",Last Name :" + this.lastName +
+                ",Language :" + this.language +
+                "Genre :" + this.writingGenre);
     }
+
 
 
 }

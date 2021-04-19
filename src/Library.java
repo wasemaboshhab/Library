@@ -41,10 +41,10 @@ public class Library {
         return booksFounded;
     }
 
-    public Book[] searchBooksByAuthorName(String author) {
 
-        String[] splitAuthorName = author.split(" ");
-        String authorNameWanted = splitAuthorName[0] + " " + splitAuthorName[1];
+    public Book[] searchBooksByAuthorName(String author) {
+        String[] authorNameSplatted = splitAuthorName(author);
+        String authorNameWanted = authorNameSplatted[0] + " " + authorNameSplatted[1];
         int counter = 0;
         for (int i = 0; i < books.length; i++) {
             String currentAuthorName = books[i].getAuthor().getFirstName() +" "+ books[i].getAuthor().getLastName();
@@ -69,6 +69,37 @@ public class Library {
 
         return booksFounded;
     }
+
+    public static String[] splitAuthorName(String name) {
+        String[] authorName = new String[2];
+        name = name + " ";
+        String outPout = "";
+        for (int i = 0; i < name.length(); i++) {
+            char currentChar = name.charAt(i);
+            if (currentChar != ' ') {
+                outPout = outPout + currentChar;
+            }
+            else {
+                initAuthorNameToArray(outPout, authorName);
+                outPout = "";
+            }
+        }
+        return authorName;
+    }
+
+
+    public static String[] initAuthorNameToArray(String outPout , String[] authorName) {
+        for (int i = 0; i < authorName.length; i++) {
+            if (authorName[i] == null) {
+                authorName[i] = outPout;
+                break;
+            }
+        }
+        return authorName;
+
+
+    }
+
 
 
     public Book[] searchBooksByMinimumYearOfPublication(int yearOfPublication) {
@@ -109,12 +140,34 @@ public class Library {
         this.clients = clients;
     }
 
-    @Override
-    public String toString() {
-        return "Library : [" + "books=" + Arrays.toString(books) + "]"+"\nClients : [" + Arrays.toString(clients) +"]"  ;
+//    private Book[] books;
+//    private Client[] clients;
+
+    public void status() {
+        System.out.println("Books existed in  the Library: \n");
+        for (int i = 0; i < this.books.length; i++) {
+            Book currentBook = books[i];
+            if (currentBook != null) {
+                currentBook.print();
+                System.out.println("--------------------------");
+                System.out.println("--------------------------");
+            }
+        }
+        System.out.println("Clients :");
+        for (int i = 0; i < clients.length; i++) {
+            Client currentClient = clients[i];
+            if (currentClient != null) {
+                currentClient.print();
+                System.out.println("--------------------------");
+                System.out.println("--------------------------");
+            }
+        }
+        }
 
     }
-}
+
+
+
 
 
 

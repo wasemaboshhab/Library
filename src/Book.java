@@ -58,10 +58,15 @@ public class   Book {
         this.copies = copies;
     }
 
-    @Override
-    public String toString() {
-        return "\nBook :\n[" + "name :" + name + ", Year of Publication :" + yearOfPublication + ", Best seller :" + bestseller + ", Copies : " + copies + "]" +
-                "\n" + "\t\tAuthor :\n\t\t" + author +"\n\t";
+    public void print() {
+        System.out.println("The Book's Name: " + this.name +
+                ",its has been published on " + this.yearOfPublication +
+                ",and its " + ((this.bestseller) ? "" : "Not") +
+                ", a Best seller " +
+                '(' + this.copies + " available copies)");
+        System.out.println();
+        this.author.print();
+
     }
 
 }
